@@ -7,6 +7,7 @@ import 'services/services.dart';
 import 'ui/pages/pages.dart';
 
 void main() {
+  // TODO: 22
   runApp(MyApp());
 }
 

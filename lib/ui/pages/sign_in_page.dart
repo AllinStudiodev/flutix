@@ -19,7 +19,7 @@ class _SignInPageState extends State<SignInPage> {
         .bloc<ThemeBloc>()
         .add(ChangeTheme(ThemeData().copyWith(primaryColor: accentColor2)));
     return WillPopScope(
-      onWillPop: () {
+      onWillPop: () async{
         context.bloc<PageBloc>().add(GoToSplashPage());
         return;
       },
