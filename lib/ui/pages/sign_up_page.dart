@@ -16,6 +16,15 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController confirmPasswordController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+
+    // mempertahankan state name and email
+    nameController.text = widget.registrationData.name;
+    emailController.text = widget.registrationData.email;
+  }
+
+  @override
   Widget build(BuildContext context) {
     context
         .bloc<ThemeBloc>()

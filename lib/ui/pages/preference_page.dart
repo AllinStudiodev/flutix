@@ -31,9 +31,12 @@ class _PreferencePageState extends State<PreferencePage> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
+        widget.registrationData.password = "";
+
         context
             .bloc<PageBloc>()
             .add(GoToRegistrationPage(widget.registrationData));
+
         return;
       },
       child: Scaffold(
@@ -64,6 +67,7 @@ class _PreferencePageState extends State<PreferencePage> {
                   SizedBox(height: 24),
                   Text("Movie Language\nYou Prefer?",
                       style: blackTextFont.copyWith(fontSize: 24)),
+                  SizedBox(height: 16),
                   Wrap(
                       spacing: 24,
                       runSpacing: 24,
